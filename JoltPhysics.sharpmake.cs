@@ -53,7 +53,7 @@ namespace VoltSharpmake
                 "JPH_USE_FMADD",
 
                 // ObjectLayer width (CMake default 16).
-                "JPH_OBJECT_LAYER_BITS=16",
+                "JPH_OBJECT_LAYER_BITS=32",
 
                 // ObjectStream + RTTI attribute info (ENABLE_OBJECT_STREAM default ON).
                 "JPH_OBJECT_STREAM",
