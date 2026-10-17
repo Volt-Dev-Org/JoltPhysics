@@ -35,6 +35,11 @@ namespace VoltSharpmake
             // include path (exported to dependents so they can #include <Jolt/Jolt.h>).
             conf.IncludePaths.Add(@"[project.RootPath]/JoltPhysics");
 
+            // Every Jolt source starts with #include <Jolt/Jolt.h>, the same header Jolt's
+            // CMake build precompiles. RegisterTypes.cpp is the source that creates the PCH.
+            conf.PrecompHeader = "Jolt/Jolt.h";
+            conf.PrecompSource = "RegisterTypes.cpp";
+
             // ---- ABI-critical PUBLIC defines --------------------------------------
             // These change struct layout / vector width. They MUST match between the
             // library and every consumer, otherwise you get silent corruption or link
